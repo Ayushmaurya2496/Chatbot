@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Chat Bot</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="chat-container">
+        <!-- Chat Header Section -->
+        <div class="chat-header">
+            <div class="header-content">
+                <div class="bot-avatar">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <div class="header-text">
+                    <h2>AI Chat Assistant</h2>
+                    <span class="status-indicator">
+                        <span class="status-dot"></span>
+                        Online
+                    </span>
+                </div>
+                <div class="header-controls">
+                    <button class="header-btn refresh-btn" id="refreshBtn" title="Refresh Chat">
+                        <i class="fas fa-sync-alt"></i>
+                    </button>
+                    <button class="header-btn minimize-btn" id="minimizeBtn" title="Minimize">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                    <button class="header-btn close-btn" id="closeBtn" title="Close">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Chat Body Section -->
+        <div class="chat-body">
+            <div class="chat-messages" id="chatMessages">
+                <div class="message bot-message">
+                    <div class="message-avatar">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="message-content">
+                        <div class="message-text">Hello! I'm your AI assistant. How Can I Help you Today?</div>
+                        <div class="message-time">Just now</div>
+                    </div>
+                </div>
+                <!-- Quick Reply Buttons -->
+                <div class="quick-replies" id="quickReplies">
+                    <button class="quick-reply-btn" data-message="Tell me a joke">Tell me a joke 😄</button>
+                    <button class="quick-reply-btn" data-message="What's the weather like?">Weather info 🌤️</button>
+                    <button class="quick-reply-btn" data-message="Help me with coding">Help </button>
+                </div>
+                <!-- Suggested Replies -->
+                <div class="suggested-replies" id="suggestedReplies">
+                    <div class="suggested-reply-label">Suggested replies:</div>
+                    <div class="suggested-reply" data-message="Yes, sure!">Yes, sure!</div>
+                    <div class="suggested-reply" data-message="No, thanks">No, thanks</div>
+                    <div class="suggested-reply" data-message="Tell me more">Tell me more</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Chat Footer Section -->
+        <div class="chat-footer">
+            <div class="input-container">
+                <div class="input-wrapper">
+                    <input type="text" id="messageInput" placeholder="Enter message..." autocomplete="off">
+                    <div class="input-controls">
+                        <button class="input-btn voice-btn" id="voiceBtn" title="Voice talk">
+                            <i class="fas fa-microphone" id="voiceIcon"></i>
+                            <i class="fas fa-stop voice-stop-icon" id="voiceStopIcon" style="display: none;"></i>
+                        </button>
+                        <button class="input-btn emoji-btn" id="emojiBtn" title="Add emoji">
+                            <i class="fas fa-smile"></i>
+                        </button>
+                        <button class="input-btn attachment-btn" id="attachmentBtn" title="Attach file">
+                            <i class="fas fa-paperclip"></i>
+                        </button>
+                    </div>
+                </div>
+                <button class="send-button" id="sendButton">
+                    <i class="fas fa-arrow-right" id="sendIcon"></i>
+                    <div class="loading-spinner" id="loadingSpinner">
+                        <i class="fas fa-spinner fa-spin"></i>
+                    </div>
+                </button>
+            </div>
+            <div class="send-status" id="sendStatus"></div>
+        </div>
+
+        <!-- Emoji Picker -->
+        <div class="emoji-picker" id="emojiPicker">
+            <div class="emoji-grid">
+                <span class="emoji" data-emoji="😊">😊</span>
+                <span class="emoji" data-emoji="😂">😂</span>
+                <span class="emoji" data-emoji="❤️">❤️</span>
+                <span class="emoji" data-emoji="👍">👍</span>
+                <span class="emoji" data-emoji="👋">👋</span>
+                <span class="emoji" data-emoji="🔥">🔥</span>
+                <span class="emoji" data-emoji="✨">✨</span>
+                <span class="emoji" data-emoji="🎉">🎉</span>
+                <span class="emoji" data-emoji="💯">💯</span>
+                <span class="emoji" data-emoji="🤔">🤔</span>
+                <span class="emoji" data-emoji="😍">😍</span>
+                <span class="emoji" data-emoji="🚀">🚀</span>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
